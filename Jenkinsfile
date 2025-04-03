@@ -1,10 +1,16 @@
 pipeline {
 	agent any
 
+    environment {
+		GIT_CREDENTIALS_ID = 'github'
+    }
+
     stages {
 		stage('Pull Latest Code') {
 			steps {
-				sh 'git pull origin main'
+				script {
+					git credentialsId: "${GIT_CREDENTIALS_ID}", branch: 'main', url: 'https://github.com/chanakyaVBSL/Cloud-Devops-Project'
+                }
             }
         }
 
