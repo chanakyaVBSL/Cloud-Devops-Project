@@ -27,7 +27,6 @@ const ContactForm = () => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <h2>Simple Contact Form - V2</h2>
             <input name="name" placeholder="Name" onChange={handleChange} required />
             <input name="email" type="email" placeholder="Email" onChange={handleChange} required />
             <input name="city" placeholder="City" onChange={handleChange} required />
