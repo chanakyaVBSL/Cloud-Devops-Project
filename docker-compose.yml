@@ -45,5 +45,22 @@ services:
     environment:
       - ME_CONFIG_MONGODB_SERVER=mongo
 
+  nagios:
+    image: jasonrivers/nagios:latest
+    container_name: nagios_monitor
+    restart: always
+    ports:
+      - "8080:80"
+    volumes:
+      - nagios_etc:/opt/nagios/etc
+      - nagios_var:/opt/nagios/var
+      - nagios_plugins:/opt/nagios/libexec
+    environment:
+      - NAGIOSADMIN_USER=nagiosadmin
+      - NAGIOSADMIN_PASS=admin123
+
 volumes:
   mongo_data:
+  nagios_etc:
+  nagios_var:
+  nagios_plugins:
