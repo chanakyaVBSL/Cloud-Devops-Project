@@ -9,7 +9,7 @@ pipeline {
 		stage('Pull Latest Code') {
 			steps {
 				script {
-					git credentialsId: "${GIT_CREDENTIALS_ID}", branch: 'main', url: 'https://github.com/chanakyaVBSL/Cloud-Devops-Project'
+					git credentialsId: "${GIT_CREDENTIALS_ID}", branch: 'master', url: 'https://github.com/chanakyaVBSL/Cloud-Devops-Project'
                 }
             }
         }
